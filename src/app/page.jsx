@@ -1249,7 +1249,8 @@ export default function Portfolio() {
           <footer className="border-t border-border py-8 px-4">
             <div className="max-w-7xl mx-auto text-center">
               <p className="text-muted-foreground">
-                &copy; {new Date().getFullYear()} Alex Johnson. Built with React & Tailwind CSS
+                &copy; 2026 MD Sultan Mia. All rights reserved. <br />
+                Built with React & Tailwind CSS.
               </p>
             </div>
           </footer>
