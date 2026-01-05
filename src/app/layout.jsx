@@ -6,9 +6,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Alex Johnson - Junior MERN Stack Developer",
+  title: "Sultan Mia -  MERN Stack Developer",
   description:
-    "Portfolio of Alex Johnson, a passionate Junior MERN Stack Developer specializing in full-stack web development with React, Node.js, Express, and MongoDB.",
+    "Portfolio of Sultan Mia, a passionate Junior MERN Stack Developer specializing in full-stack web development with React, Node.js, Express, and MongoDB.",
   generator: "v0.app",
   icons: {
     icon: [
