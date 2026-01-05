@@ -34,6 +34,7 @@ import {
   Layers,
   Twitter,
   Facebook,
+  Laptop,
 } from "lucide-react"
 
 const heroImage = '/My-Professional-iamge (1).png'
@@ -111,6 +112,7 @@ export default function Portfolio() {
       { name: "Tailwind CSS", icon: Sparkles, level: 92 },
       { name: "JavaScript", icon: Zap, level: 85 },
       { name: "React", icon: Box, level: 87 },
+      { name: "Next.js", icon: Box, level: 60 },
     ],
     backend: [
       { name: "Node.js", icon: Code2, level: 83 },
@@ -127,71 +129,101 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack shopping platform with cart, checkout, and payment integration",
+      title: "ContestHub",
+      description: "Complete contest management platform with creator tools, payment integration, and role-based dashboards",
       fullDescription:
-        "A comprehensive e-commerce solution built with the MERN stack featuring user authentication, product browsing, shopping cart functionality, secure checkout process, and payment integration. The platform includes an admin dashboard for managing products, orders, and users.",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
+        "A comprehensive contest management platform built with the MERN stack. Users can browse and participate in creative contests (design, article writing, business ideas), contest creators can manage their contests, admins can approve/reject contests, and winners are declared by creators. Features secure payment integration, JWT authentication, role-based dashboards, countdown timers, and winner announcements.",
+      tech: ["React", "Node.js", "MongoDB", "Express", "TanStack Query", "JWT", "Stripe/Payment API"],
       mainTech: "MERN Stack (MongoDB, Express.js, React, Node.js)",
-      image: "/modern-ecommerce-interface.png",
-      liveUrl: "#",
-      githubUrl: "#",
+      image: "https://i.ibb.co.com/8DYKGg7Q/Screenshot-2026-01-05-153044.png",
+      liveUrl: "https://contesthub-a73a8.web.app",
+      githubUrl: "https://github.com/Sultanmia22/Contest-hub-client.git",
       challenges: [
-        "Implementing secure payment gateway integration while handling different payment methods",
-        "Managing complex state for cart items across multiple components and user sessions",
-        "Optimizing database queries for fast product search and filtering with large datasets",
+        "Implementing secure payment gateway integration for contest registration fees with transaction tracking",
+        "Managing complex role-based access control (Admin, Creator, Normal User) with protected routes and JWT authentication",
+        "Building real-time countdown timers for contest deadlines and managing contest lifecycle states (pending, approved, rejected, ended)",
+        "Optimizing database queries for contest search, filtering by types, and pagination with large datasets",
+        "Implementing submission management system where users submit task-related links and creators declare winners"
+      ],
+      features: [
+        "Three user roles: Admin, Contest Creator, Normal User with role-based dashboards",
+        "Secure authentication with JWT and Google Sign-in integration",
+        "Payment integration for contest participation with transaction tracking",
+        "Real-time countdown timers for contest deadlines",
+        "Search contests by type with backend filtering logic",
+        "Creator tools: Add, edit, delete, and manage contests before approval",
+        "Admin panel: Approve/reject contests and manage user roles",
+        "Submission management system with task links and winner declaration",
+        "User profiles with participation history and win percentage charts",
+        "Fully responsive design (mobile, tablet, desktop) with dark/light theme toggle",
+        "Leaderboard page ranking users by contest wins",
+        "Sweet alerts/toasts for all user actions (login, signup, CRUD operations)",
+        "TanStack Query for efficient data fetching and caching"
       ],
       futurePlans: [
-        "Add product recommendation system using machine learning algorithms",
-        "Implement real-time inventory management and low-stock alerts",
-        "Add multi-language support for international customers",
-        "Integrate social media login options (Google, Facebook)",
+        "Implement email notifications for contest status updates and winner announcements",
+        "Add social sharing features for contest participation and winner celebrations",
+        "Build advanced analytics dashboard for creators to track contest performance",
+        "Integrate package system where creators can purchase packages for posting limited contests",
+        "Add real-time notifications using WebSockets for submissions and approvals",
+        "Implement dispute resolution system for contest-related issues"
+      ],
+    },
+
+    {
+      title: "ARTIFY – A Creative Artwork Showcase Platform",
+      description: "An online art-sharing platform where artists can upload, display, and explore creative works with community interaction",
+      fullDescription:
+        "ARTIFY is a comprehensive art-sharing platform designed for artists and art enthusiasts to connect and collaborate. Artists can upload their creative works with detailed information, explore other artists' galleries, curate their favorite artworks, and interact through likes and comments. The platform features a modern UI with intuitive navigation, real-time updates, a like system with MongoDB, category filtering, dark/light mode toggle, and responsive design across all devices.",
+      tech: ["React", "Express.js", "MongoDB", "Tailwind CSS"],
+      mainTech: "React, Express.js, MongoDB, Firebase Authentication, Tailwind CSS",
+      image: "https://i.ibb.co.com/qL2HkXzG/Screenshot-2026-01-05-164055.png",
+      liveUrl: "https://artify-d6b69.web.app/",
+      githubUrl: "https://github.com/Sultanmia22/future-box-client.git",
+      challenges: [
+        "Implementing MongoDB $inc/$push/$pull operators for the like system with increase and decrease functionality",
+        "Creating a real-time filter system for artworks by category without page reload",
+        "Managing user authentication state across private routes to prevent unwanted redirects on page reload",
+        "Integrating multiple libraries (react-image-gallery, React Simple Typewriter, React Awesome Reveal, React Tooltip) seamlessly",
+        "Implementing dark/light mode toggle with localStorage persistence across all components",
+      ],
+      futurePlans: [
+        "Add Artist Profile Page showing artist bio, total artworks, and follower count",
+        "Implement Category Filter Page with tabbed view for grouped artworks",
+        "Add advanced search with filters by medium, price range, and dimensions",
+        "Create notification system for likes, favorites, and new artist follows",
+        "Integrate payment gateway for artwork purchases",
+        "Add comment/messaging system between artists and buyers",
       ],
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task manager with real-time updates and team features",
+      title: "SkillSwap – A Local Skill Exchange Platform",
+      description: "An interactive platform for individuals to offer, learn, and trade skills within their local area with ratings and real-time booking",
       fullDescription:
-        "A full-featured task management application that allows teams to collaborate efficiently with real-time updates, drag-and-drop task organization, team member assignments, deadline tracking, and progress monitoring. Built with real-time communication using Socket.io.",
-      tech: ["React", "Express", "MongoDB", "Tailwind"],
-      mainTech: "React, Express.js, MongoDB, Socket.io, Tailwind CSS",
-      image: "/task-management-dashboard.png",
-      liveUrl: "#",
-      githubUrl: "#",
+        "SkillSwap is a comprehensive skill exchange platform that connects local skill providers and learners. Users can browse skill listings across multiple categories like music, language, coding, and wellness, view provider ratings and availability, book sessions through an intuitive interface, and manage their profiles. The platform features real-time slot availability, user authentication with Google login, profile management with image updates, password reset functionality, and a responsive design optimized for all devices.",
+      tech: ["React", "Firebase Authentication", "JSON Data", "Tailwind CSS"],
+      mainTech: "React, Firebase (Auth), Swiper.js, AOS, React Hot Toast, Tailwind CSS",
+      image: "https://i.ibb.co.com/8L92XzCL/Screenshot-2026-01-05-164718.png",
+      liveUrl: "https://skillswap-apps.netlify.app/",
+      githubUrl: "https://github.com/Sultanmia22/Skillswap.git",
       challenges: [
-        "Implementing real-time synchronization across multiple users without conflicts",
-        "Creating an intuitive drag-and-drop interface that works smoothly on all devices",
-        "Handling notification system for task assignments and deadline reminders efficiently",
+        "Implementing protected routes with proper redirect logic after authentication to return users to their intended page",
+        "Managing Firebase authentication state persistence across page reloads without errors in SPA",
+        "Building a functional forgot password feature with email verification and Gmail redirect",
+        "Creating a profile update form using Firebase updateProfile() method with image URL handling",
+        "Implementing password toggle eye button with validation for uppercase, lowercase, and minimum 6 characters",
+        "Integrating multiple npm packages (AOS, Swiper, React Hot Toast) seamlessly without conflicts",
       ],
       futurePlans: [
-        "Add Gantt chart view for better project timeline visualization",
-        "Implement file attachment support for tasks with cloud storage integration",
-        "Add calendar integration (Google Calendar, Outlook)",
-        "Create mobile app version using React Native",
+        "Add payment gateway integration for skill session booking and transactions",
+        "Implement real-time chat/messaging system between skill providers and learners",
+        "Create a review and rating system with detailed feedback for skill sessions",
+        "Add calendar integration for appointment scheduling and availability management",
+        "Build a skill provider dashboard with earnings, session management, and analytics",
+        "Implement advanced filtering by category, price range, rating, and location proximity",
+        "Add notification system for booking confirmations and session reminders",
       ],
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Real-time weather app with location search and 7-day forecast",
-      fullDescription:
-        "An interactive weather dashboard that provides real-time weather information, 7-day forecasts, hourly predictions, and weather maps. Features include location-based auto-detection, city search, weather alerts, and beautiful data visualizations with charts and animations.",
-      tech: ["React", "API Integration", "Tailwind"],
-      mainTech: "React, OpenWeather API, Chart.js, Tailwind CSS",
-      image: "/weather-app-interface.png",
-      liveUrl: "#",
-      githubUrl: "#",
-      challenges: [
-        "Handling API rate limits while providing real-time updates for multiple locations",
-        "Creating responsive and accessible weather data visualizations with charts",
-        "Implementing accurate geolocation with fallback options for denied permissions",
-      ],
-      futurePlans: [
-        "Add severe weather alerts with push notifications",
-        "Implement weather map layer with radar and satellite imagery",
-        "Add air quality index and pollen count information",
-        "Create weather history and trends analysis feature",
-      ],
-    },
+    }
   ]
 
   const services = [
@@ -216,26 +248,46 @@ export default function Portfolio() {
   ]
 
   const education = [
-    {
-      degree: "Bachelor of Technology in Computer Science",
-      institution: "XYZ University",
-      period: "2021 - 2025",
-      status: "Final Year",
-      description:
-        "Focused on web development, data structures, algorithms, and software engineering principles. Completed multiple projects in MERN stack development and participated in coding competitions.",
-      achievements: ["CGPA: 8.5/10", "Top 10% in class", "Led 3 major projects"],
-      icon: GraduationCap,
-    },
-    {
-      degree: "Higher Secondary Education (12th)",
-      institution: "ABC Senior Secondary School",
-      period: "2019 - 2021",
-      status: "Completed",
-      description: "Specialized in Science stream with Computer Science as main subject.",
-      achievements: ["Percentage: 92%", "School Topper in CS"],
-      icon: Award,
-    },
-  ]
+  {
+    degree: "Secondary School Certificate (SSC)",
+    institution: "Khunua Charpara Moulovi Nagar High School",
+    period: "2019 – 2021",
+    status: "Completed",
+    description: "Completed SSC in Science stream, with a focus on core science subjects and Computer Science.",
+    achievements: [
+      "GPA: 4.67 / 5.0",
+    ],
+    icon: Award,
+  },
+  {
+    degree: "Diploma in Computer Science and Technology",
+    institution: "Sherpur Govt. Polytechnic Institute",
+    period: "2020 – 2024",
+    status: "Completed",
+    description:
+      "Pursuing a 4-year Diploma in Computer Science and Technology, covering core subjects such as programming fundamentals, web development basics, data structures, algorithms, and software engineering principles. Gained a solid theoretical foundation along with practical experience in programming languages and web technologies, supporting continuous learning and hands-on project development.",
+    achievements: [
+      "CGPA: 3.36 / 4.0",
+      "Ranked in Top 10% of the class",
+      "Led and completed 3 major projects"
+    ],
+    icon: Award,
+  },
+  {
+    degree: "Complete Web Development Course",
+    institution: "Programming Hero",
+    period: "Jul 2025 – Present",
+    status: "Ongoing",
+    description: "Currently learning web development through Programming Hero, covering HTML, CSS, Tailwind CSS, JavaScript, React, Node.js, Express.js, and MongoDB. Gaining hands-on experience by building projects and applying industry best practices.",
+    achievements: [
+      "Building full-stack projects",
+      "Learning MERN stack fundamentals",
+      "Applying modern web development practices"
+    ],
+    icon: Laptop,
+  }
+];
+
 
   const handleResumeDownload = () => {
     const resumeReady = false
@@ -271,11 +323,10 @@ export default function Portfolio() {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize px-4 py-2 rounded-lg transition-all ${
-                    activeSection === section
-                      ? "bg-primary text-primary-foreground font-medium"
-                      : "text-muted-foreground hover:text-foreground hover:bg-accent"
-                  }`}
+                  className={`capitalize px-4 py-2 rounded-lg transition-all ${activeSection === section
+                    ? "bg-primary text-primary-foreground font-medium"
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    }`}
                 >
                   {section}
                 </button>
@@ -309,9 +360,8 @@ export default function Portfolio() {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`block w-full text-left px-4 py-3 rounded-lg capitalize transition-all ${
-                    activeSection === section ? "bg-primary text-primary-foreground font-medium" : "hover:bg-accent"
-                  }`}
+                  className={`block w-full text-left px-4 py-3 rounded-lg capitalize transition-all ${activeSection === section ? "bg-primary text-primary-foreground font-medium" : "hover:bg-accent"
+                    }`}
                 >
                   {section}
                 </button>
@@ -470,7 +520,7 @@ export default function Portfolio() {
 
                 <div className="flex gap-4 justify-center lg:justify-start pt-4">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/Sultanmia22"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-xl border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
@@ -478,7 +528,7 @@ export default function Portfolio() {
                     <Github className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/devmdsultanmia/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-xl border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
@@ -486,7 +536,7 @@ export default function Portfolio() {
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://twitter.com"
+                    href="https://x.com/sultanmia5732"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-xl border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
@@ -494,7 +544,7 @@ export default function Portfolio() {
                     <Twitter className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-xl border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
@@ -591,18 +641,18 @@ export default function Portfolio() {
                   <div>
                     <h4 className="text-xl font-bold mb-3 text-primary">My Programming Journey</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      My journey into web development began during my university days when I discovered the power of
-                      creating interactive websites. What started as a curiosity quickly became a passion. I spent
-                      countless hours learning HTML, CSS, and JavaScript, and was amazed by how code could bring ideas
-                      to life on the screen.
+                      My journey into web development began during my academic life, where I was first introduced to programming and
+                      web technologies through my institute. While this built my foundation, my real learning accelerated when I
+                      started learning from Programming Hero, where my curiosity quickly turned into a strong passion for web
+                      development.
                     </p>
                   </div>
 
                   <p className="text-muted-foreground leading-relaxed">
-                    As I progressed, I dove deep into the MERN stack (MongoDB, Express.js, React, and Node.js),
-                    fascinated by the ability to build complete, full-stack applications. Each project taught me
-                    something new, and every challenge made me a better developer. Today, I continue to learn and grow,
-                    staying updated with the latest technologies and best practices in web development.
+                    Through Programming Hero, I focused heavily on HTML, CSS, Tailwind CSS, JavaScript, and React, and gradually moved
+                    into the MERN stack (MongoDB, Express.js, React, and Node.js). By building multiple hands-on projects and solving
+                    real-world problems, I continue to improve my skills, write cleaner code, and grow as a fresher MERN Stack
+                    Developer.
                   </p>
 
                   <div>
@@ -1067,10 +1117,10 @@ export default function Portfolio() {
                       <div>
                         <div className="text-sm text-muted-foreground">Email</div>
                         <a
-                          href="mailto:alex@example.com"
+                          href="mailto:sultanmia5732@gmail.com"
                           className="font-semibold hover:text-primary transition-colors"
                         >
-                          alex@example.com
+                          sultanmia5732@gmail.com
                         </a>
                       </div>
                     </div>
@@ -1083,8 +1133,8 @@ export default function Portfolio() {
                       </div>
                       <div>
                         <div className="text-sm text-muted-foreground">Phone</div>
-                        <a href="tel:+1234567890" className="font-semibold hover:text-primary transition-colors">
-                          +1 (234) 567-890
+                        <a href="tel:+8801746931945" className="font-semibold hover:text-primary transition-colors">
+                          +8801746931945
                         </a>
                       </div>
                     </div>
@@ -1098,12 +1148,12 @@ export default function Portfolio() {
                       <div>
                         <div className="text-sm text-muted-foreground">WhatsApp</div>
                         <a
-                          href="https://wa.me/1234567890"
+                          href="https://wa.me/01746931945"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="font-semibold hover:text-primary transition-colors"
                         >
-                          +1 (234) 567-890
+                          +8801746931945
                         </a>
                       </div>
                     </div>
@@ -1111,7 +1161,7 @@ export default function Portfolio() {
 
                   <div className="flex gap-3 pt-4">
                     <a
-                      href="https://github.com"
+                      href="https://github.com/Sultanmia22"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 p-4 rounded-xl border border-border hover:border-primary hover:bg-primary/5 transition-all flex items-center justify-center gap-2 group"
@@ -1120,7 +1170,7 @@ export default function Portfolio() {
                       <span className="font-medium">GitHub</span>
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/devmdsultanmia/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 p-4 rounded-xl border border-border hover:border-primary hover:bg-primary/5 transition-all flex items-center justify-center gap-2 group"
